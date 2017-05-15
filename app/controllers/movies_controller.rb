@@ -22,7 +22,14 @@ class MoviesController < ApplicationController
 
     @movie.title = params[:title]
     @movie.year = params[:year]
+
+if @movie.duration = params[:duration].present?
     @movie.duration = params[:duration]
+  elsif
+    @movie.duration = 0
+  else
+  end
+
     @movie.description = params[:description]
     @movie.image_url = params[:image_url]
     @movie.director_id = params[:director_id]
@@ -67,7 +74,7 @@ class MoviesController < ApplicationController
     @movie.destroy
 
     if URI(request.referer).path == "/movies/#{@movie.id}"
-      redirect_to("/", :notice => "Movie deleted.")
+      redirect_to("/movies", :notice => "Movie deleted.")
     else
       redirect_to(:back, :notice => "Movie deleted.")
     end

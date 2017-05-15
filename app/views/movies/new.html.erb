@@ -42,7 +42,7 @@
           Duration
         </label>
 
-        <input type="text" id="duration" name="duration" placeholder="Duration" class="form-control" value="<%= @movie.duration %>">
+        <input type="text" id="duration" name="duration"  class="form-control" value="<%= @movie.duration %>">
       </div>
 
       <!-- Label and input for description -->
@@ -83,6 +83,7 @@
       <button class="btn btn-success">
         Create Movie
       </button>
+      <a href="/directors/new">Add a Director</a>
       or
       <a href="/movies">Cancel</a>
     </form>
