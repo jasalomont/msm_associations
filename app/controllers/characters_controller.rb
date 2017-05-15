@@ -61,7 +61,7 @@ class CharactersController < ApplicationController
     @character.destroy
 
     if URI(request.referer).path == "/characters/#{@character.id}"
-      redirect_to("/", :notice => "Character deleted.")
+      redirect_to("/characters", :notice => "Character deleted.")
     else
       redirect_to(:back, :notice => "Character deleted.")
     end
